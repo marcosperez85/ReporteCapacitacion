@@ -3,8 +3,10 @@
 // la primera y tercera fila.
 
 function crearFilas(jsonFiltrado, tipoDeReporte) {
+    let contador = 0;
+
     jsonFiltrado.forEach(element => {
-        let contador = 0;
+        if (contador == 3) contador = 0;
 
         // Crear los contenedores de texto
         const $panelFirstName = document.createElement("div");
@@ -46,9 +48,25 @@ function crearFilas(jsonFiltrado, tipoDeReporte) {
         const regex1 = /YPF |iFIX & Historian|[(]|[)]/g;
         const nuevoCurriculum = element["Curriculum/Series Title"].replace(regex1, "");
 
-        $firstName.innerText = element["First Name"];
-        $lastName.innerText = element["Last name"];
-        $email.innerText = element["Email"];
+        // Filtro nombre, apellido e email en HTML y NO en el JSON
+        if (tipoDeReporte == "ReporteGeneral") {
+
+            if (contador == 1 || contador == 2) {
+                $firstName.innerText = " ";
+                $lastName.innerText = " ";
+                $email.innerText = " ";
+            } else {
+                $firstName.innerText = element["First Name"];
+                $lastName.innerText = element["Last name"];
+                $email.innerText = element["Email"];
+            }
+            
+        } else {
+            $firstName.innerText = element["First Name"];
+            $lastName.innerText = element["Last name"];
+            $email.innerText = element["Email"];
+        }
+
         $curriculum.innerText = nuevoCurriculum;
         $completed1.innerText = element["Completed Courses"];
         $coursesInCurriculum.innerText = element["Courses in Curriculum"];
