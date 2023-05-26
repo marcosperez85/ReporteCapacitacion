@@ -47,7 +47,8 @@ fileInput.addEventListener('change', (event) => {
     cambiarTituloGeneral();
     borrarCanvasAnterior();
     ocultarCanvasContainer();
-    generarReporteGeneral(sortedData);    
+    mostrarBotones();
+    generarReporteGeneral(sortedData);   
   })
   
   // Set the file type to 'text' or 'dataURL' depending on your needs
@@ -121,6 +122,10 @@ $reporteAdvanced.onclick = function () {
   mostrarCanvasContainer();
   tipoDeReporte = "curriculaFiltrada";
   generarReporteAdvanced(sortedData);
+}
+
+function mostrarBotones() {
+  $buttonContainer.className = "";
 }
 
 function borrarLista() {
