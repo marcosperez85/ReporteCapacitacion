@@ -1,0 +1,151 @@
+body {
+    background-color: #eee;
+    height: 100%;
+}
+
+h1 {
+    font-size: 3vw; 
+}
+
+.logoGE {
+    width: 8vw;
+}
+
+.logoTecnet {
+    width: 8vw;
+}
+
+.logoYPF {
+    width: 20vw;
+}
+
+#fila0 {
+    display:flex;
+    flex-flow: row wrap;
+    margin: auto;
+    justify-content: space-between;    
+    width: 90vw;
+}
+
+#filaContainer {
+    position: relative;
+    display:grid;
+    width: 90vw;
+    margin: auto;
+    grid-auto-rows: minmax(4vw, auto);
+    top: 2vw;
+}
+
+
+#fila1 {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#fila2 {
+    position: relative;
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(2, 10vw) 20vw 20vw repeat(3, 10vw);
+    /* grid-template-columns: repeat(2, 1.5fr) 2fr 3fr repeat(3, 1fr); */
+}
+
+.textoFila2 {
+    display: grid;
+    place-items: center;   
+    font-size: 1.3vw;
+    font-weight: bold;
+    background-color: #ccf;
+    border: 1px solid black;
+}
+
+#lista {
+    display: grid;
+    grid-template-columns: repeat(2, 10vw) 20vw 20vw repeat(3, 10vw);
+    /* grid-template-columns: repeat(2, 1.5fr) 2fr 3fr repeat(3, 1fr); */
+    text-align: center;
+}
+
+.textoGenerado {
+    display: grid;
+    align-items: center;
+    font-size: 1.3vw;
+    border: 1px solid #ddd; 
+    bottom: 1%;
+}
+
+.oculto {
+    visibility: hidden;
+}
+
+.resultadosContainer {
+    display: grid;
+    position: relative;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(3, 1fr);
+    background-color: #ccf;
+    width: 25vw;
+    height: 12vw;
+    left: 4vw;
+    margin-top: 4vw;
+    margin-bottom: 4vw;
+}
+
+.alinearVertical {
+    display: grid;
+    align-content: center;        
+}
+
+.alinearAmbos {
+    display: grid;
+    place-items: center;
+}
+
+.titulo3 {
+    font-size: 1.3vw;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+#buttonContainer {
+    position: relative;
+    display:flex;
+    flex-flow: row;
+    justify-content: space-between;
+    width: 60vw;
+}
+
+.botonReporte {
+    background-color: #ccf;
+    font-size: 1.3vw;
+    height: 4vw;
+    width: 12vw;
+    border-top-right-radius: 1vw;
+    border-top-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+    border-bottom-left-radius: 1vw;
+}
+
+.graficoContainer {
+    display: grid;
+    place-items: center;
+    
+}
+
+.tablaResultados {
+    position: relative;
+    display:flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.bar:hover {
+    fill: blue;
+}
+
+.xAxis, .yAxis {
+    font-size: 1vw;
+}
