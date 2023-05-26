@@ -146,11 +146,18 @@ h1 {
     
 }
 
-.tablaResultados {
+#tablaResultados {
     position: relative;
     display:flex;
-    flex-flow: column;
+    flex-flow: row;
     justify-content: space-between;
+    align-items: center;
+    width: 55vw;
+}
+
+#pieChartContainer {
+    margin-top: 3vw;
+    margin-bottom: 3vw;
 }
 
 .bar:hover {
