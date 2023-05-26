@@ -1,3 +1,7 @@
+:root {
+    --ancho-tabla: 90vw;
+}
+
 body {
     background-color: #eee;
     height: 100%;
@@ -19,25 +23,25 @@ h1 {
     width: 20vw;
 }
 
-#fila0 {
+#fila-botones {
     display:flex;
     flex-flow: row wrap;
     margin: auto;
     justify-content: space-between;    
-    width: 90vw;
+    width: var(--ancho-tabla);
 }
 
-#filaContainer {
+#contenedor-titulo-logos {
     position: relative;
     display:grid;
-    width: 90vw;
+    width: var(--ancho-tabla);
     margin: auto;
     grid-auto-rows: minmax(4vw, auto);
     top: 2vw;
 }
 
 
-#fila1 {
+#fila-titulo-logos {
     display:flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -45,7 +49,7 @@ h1 {
     border: 1px solid black;
 }
 
-#fila2 {
+#fila-nombreDeColumnas {
     position: relative;
     display: grid;
     text-align: center;
