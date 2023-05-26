@@ -3,7 +3,7 @@
     --ancho-de-columnas: repeat(2, 10vw) 20vw 20vw repeat(3, 10vw);
     --tipografia1: sans-serif;
     --fontSize-texto-generado: 1.2vw;
-    --fontSize-nombreColumnas: 1.2vw;
+    --fontSize-nombreColumnas: 1.1vw;
 }
 
 body {
@@ -77,15 +77,15 @@ h1 {
     display: grid;
     grid-template-columns: var(--ancho-de-columnas);
     /* grid-template-columns: repeat(2, 1.5fr) 2fr 3fr repeat(3, 1fr); */
-    text-align: center;
 }
 
 .textoGenerado {
     display: grid;
     align-items: center;
     font-size: var(--fontSize-texto-generado);
-    bottom: 1%;
     font-family: var(--tipografia1);
+    margin-bottom: 0.3vw;
+    margin-left: 1vw;
 }
 
 .oculto {
