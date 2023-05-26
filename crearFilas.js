@@ -4,6 +4,7 @@
 
 function crearFilas(jsonFiltrado, tipoDeReporte) {
     jsonFiltrado.forEach(element => {
+        let contador = 0;
 
         // Crear los contenedores de texto
         const $panelFirstName = document.createElement("div");
@@ -14,15 +15,6 @@ function crearFilas(jsonFiltrado, tipoDeReporte) {
         const $panelCoursesInCurriculum = document.createElement("div");
         const $panelCompleted2 = document.createElement("div");
 
-        // Asigno la clase a los contenedores de texto
-        $panelFirstName.className = "panelTextoGenerado anchoCorto alturaBaja";
-        $panelLastName.className = "panelTextoGenerado anchoCorto alturaBaja";
-        $panelEmail.className = "panelTextoGenerado anchoLargo alturaBaja";
-        $panelCurriculum.className = "panelTextoGenerado anchoLargo alturaBaja";
-        $panelCompleted1.className = "panelTextoGenerado anchoCorto alturaBaja";
-        $panelCoursesInCurriculum.className = "panelTextoGenerado anchoCorto alturaBaja";
-        $panelCompleted2.className = "panelTextoGenerado anchoCorto alturaBaja";
-
         // Crear los textos
         const $firstName = document.createElement("div");
         const $lastName = document.createElement("div");
@@ -31,6 +23,15 @@ function crearFilas(jsonFiltrado, tipoDeReporte) {
         const $completed1 = document.createElement("div");
         const $coursesInCurriculum = document.createElement("div");
         const $completed2 = document.createElement("div");
+
+        // Asigno la clase a los contenedores de texto
+        $panelFirstName.className = "panelTextoGenerado anchoCorto alturaBaja";
+        $panelLastName.className = "panelTextoGenerado anchoCorto alturaBaja";
+        $panelEmail.className = "panelTextoGenerado anchoLargo alturaBaja";
+        $panelCurriculum.className = "panelTextoGenerado anchoLargo alturaBaja";
+        $panelCompleted1.className = "panelTextoGenerado anchoCorto alturaBaja";
+        $panelCoursesInCurriculum.className = "panelTextoGenerado anchoCorto alturaBaja";
+        $panelCompleted2.className = "panelTextoGenerado anchoCorto alturaBaja";
 
         // Asigno la clase a los textos
         $firstName.className = "textoGenerado";
@@ -70,5 +71,7 @@ function crearFilas(jsonFiltrado, tipoDeReporte) {
         $panelCompleted1.appendChild($completed1)
         $panelCoursesInCurriculum.appendChild($coursesInCurriculum)
         $panelCompleted2.appendChild($completed2)
+
+        contador++
     });
 }

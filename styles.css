@@ -42,7 +42,7 @@ h1 {
 
 #contenedor-titulo-logos {
     position: relative;
-    display:grid;
+    display: grid;
     width: var(--ancho-tabla);
     margin: auto;
     grid-auto-rows: minmax(4vw, auto);
