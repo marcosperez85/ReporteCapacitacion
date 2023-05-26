@@ -1,12 +1,9 @@
 :root {
     --ancho-tabla: 90vw;
-    --anchoNombre: 10vw;
-    --anchoApellido: 100vw;
-    --anchoEmail: 20vw;
-    --anchoCurricula: 20vw;
-    --anchoCompletado: 10vw;
-    --anchoCursoTotal: 10vw;
-    --anchoPorcentaje: 10vw;
+    --ancho-uno: 10vw;
+    --ancho-dos: 20vw;
+    --altura-uno: 1.5vw;
+    --altura-dos: 4.5vw;
     --ancho-de-columnas: repeat(2, 10vw) 20vw 20vw repeat(3, 10vw);
     --tipografia1: sans-serif;
     --fontSize-texto-generado: 1.2vw;
@@ -84,17 +81,23 @@ h1 {
 }
 
 .panelTextoGenerado {
-    height: 1.5vw;
     border: 1px solid black;
 }
 
-.firstName .lastName .cursosCompletados
-.cursosTotales .cursosPorcentaje {
-    width: 10vw;
+.alturaBaja {
+    height: var(--altura-uno);
 }
 
-.curricula .email {
-    width: 20vw;
+.alturaAlta {
+    height: var(--altura-dos);
+}
+
+.anchoCorto {
+    width: var(--ancho-uno);
+}
+
+.anchoLargo {
+    width: var(--ancho-dos);
 }
 
 .textoGenerado {

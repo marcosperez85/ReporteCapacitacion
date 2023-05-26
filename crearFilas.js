@@ -2,7 +2,7 @@
 // Este código se repite con respecto al del Reporte General sólo que en este caso no hace falta eliminar
 // la primera y tercera fila.
 
-function crearFilas(jsonFiltrado) {
+function crearFilas(jsonFiltrado, tipoDeReporte) {
     jsonFiltrado.forEach(element => {
 
         // Crear los contenedores de texto
@@ -15,13 +15,13 @@ function crearFilas(jsonFiltrado) {
         const $panelCompleted2 = document.createElement("div");
 
         // Asigno la clase a los contenedores de texto
-        $panelFirstName.className = "panelTextoGenerado firstName";
-        $panelLastName.className = "panelTextoGenerado lastName";
-        $panelEmail.className = "panelTextoGenerado email";
-        $panelCurriculum.className = "panelTextoGenerado curricula";
-        $panelCompleted1.className = "panelTextoGenerado cursosCompletados";
-        $panelCoursesInCurriculum.className = "panelTextoGenerado cursosTotales";
-        $panelCompleted2.className = "panelTextoGenerado cursosPorcentaje";
+        $panelFirstName.className = "panelTextoGenerado anchoCorto alturaBaja";
+        $panelLastName.className = "panelTextoGenerado anchoCorto alturaBaja";
+        $panelEmail.className = "panelTextoGenerado anchoLargo alturaBaja";
+        $panelCurriculum.className = "panelTextoGenerado anchoLargo alturaBaja";
+        $panelCompleted1.className = "panelTextoGenerado anchoCorto alturaBaja";
+        $panelCoursesInCurriculum.className = "panelTextoGenerado anchoCorto alturaBaja";
+        $panelCompleted2.className = "panelTextoGenerado anchoCorto alturaBaja";
 
         // Crear los textos
         const $firstName = document.createElement("div");
@@ -71,6 +71,4 @@ function crearFilas(jsonFiltrado) {
         $panelCoursesInCurriculum.appendChild($coursesInCurriculum)
         $panelCompleted2.appendChild($completed2)
     });
-
-    crearGraficoDeBarras(jsonFiltrado);
 }

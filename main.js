@@ -18,6 +18,7 @@ let jsonData
 let filteredData
 let sortedData
 let arrayNombresConCursos = [];
+let tipoDeReporte = "ReporteGeneral";
 
 // Get a reference to the file input element
 const fileInput = document.getElementById('file-input');
@@ -88,6 +89,7 @@ $reporteGeneral.onclick = function () {
   cambiarTituloGeneral();
   borrarCanvasAnterior();
   ocultarCanvasContainer();
+  tipoDeReporte = "ReporteGeneral";
   generarReporteGeneral(sortedData);
 }
 
@@ -97,6 +99,7 @@ $reporteFoundational.onclick = function () {
   cambiarTituloFoundational();
   borrarCanvasAnterior();
   mostrarCanvasContainer();
+  tipoDeReporte = "curriculaFiltrada";
   generarReporteFoundational(sortedData);
 }
 
@@ -106,6 +109,7 @@ $reporteIntermediate.onclick = function () {
   cambiarTituloIntermediate();
   borrarCanvasAnterior();
   mostrarCanvasContainer();
+  tipoDeReporte = "curriculaFiltrada";
   generarReporteIntermediate(sortedData);
 }
 
@@ -115,6 +119,7 @@ $reporteAdvanced.onclick = function () {
   cambiarTituloAdvanced();
   borrarCanvasAnterior();
   mostrarCanvasContainer();
+  tipoDeReporte = "curriculaFiltrada";
   generarReporteAdvanced(sortedData);
 }
 
@@ -163,20 +168,23 @@ function cambiarTituloAdvanced() {
   document.querySelector("h1").textContent = "Avance de Capacitacion Advanced"
 }
 
-  function generarReporteFoundational(sortedData) {
-    const tier1Filter = sortedData.filter(elem => elem["Curriculum/Series Title"] == "YPF Tier 1 - iFIX & Historian (Foundational)")
+function generarReporteFoundational(sortedData) {
+  const tier1Filter = sortedData.filter(elem => elem["Curriculum/Series Title"] == "YPF Tier 1 - iFIX & Historian (Foundational)")
                                   .filter(elem => elem["Completed Courses"] > 0);
-    crearFilas(tier1Filter)
-  }
+  crearFilas(tier1Filter, tipoDeReporte)
+  crearGraficoDeBarras(tier1Filter);
+}
 
 function generarReporteIntermediate(sortedData) {
   const tier2Filter = sortedData.filter(elem => elem["Curriculum/Series Title"] == "YPF Tier 2 - iFIX & Historian (Intermediate)")
                                 .filter(elem => elem["Completed Courses"] > 0);
-  crearFilas(tier2Filter)
+  crearFilas(tier2Filter, tipoDeReporte)
+  crearGraficoDeBarras(tier2Filter);
 }
 
 function generarReporteAdvanced(sortedData) {
   const tier3Filter = sortedData.filter(elem => elem["Curriculum/Series Title"] == "YPF Tier 3 - iFIX & Historian (Advanced)")
                                 .filter(elem => elem["Completed Courses"] > 0);
-  crearFilas(tier3Filter)
+  crearFilas(tier3Filter, tipoDeReporte)
+  crearGraficoDeBarras(tier3Filter);
 }
