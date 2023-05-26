@@ -1,5 +1,12 @@
 :root {
     --ancho-tabla: 90vw;
+    --anchoNombre: 10vw;
+    --anchoApellido: 100vw;
+    --anchoEmail: 20vw;
+    --anchoCurricula: 20vw;
+    --anchoCompletado: 10vw;
+    --anchoCursoTotal: 10vw;
+    --anchoPorcentaje: 10vw;
     --ancho-de-columnas: repeat(2, 10vw) 20vw 20vw repeat(3, 10vw);
     --tipografia1: sans-serif;
     --fontSize-texto-generado: 1.2vw;
@@ -45,7 +52,6 @@ h1 {
     top: 2vw;
 }
 
-
 #fila-titulo-logos {
     display:flex;
     flex-flow: row wrap;
@@ -62,7 +68,6 @@ h1 {
     font-family: var(--tipografia1);
     grid-template-columns: var(--ancho-de-columnas);
     background-color: #ccf;
-    /* grid-template-columns: repeat(2, 1.5fr) 2fr 3fr repeat(3, 1fr); */
 }
 
 .nombreColumnas {
@@ -76,12 +81,24 @@ h1 {
 #contenedor-textoGenerado {
     display: grid;
     grid-template-columns: var(--ancho-de-columnas);
-    /* grid-template-columns: repeat(2, 1.5fr) 2fr 3fr repeat(3, 1fr); */
+}
+
+.panelTextoGenerado {
+    height: 1.5vw;
+    border: 1px solid black;
+}
+
+.firstName .lastName .cursosCompletados
+.cursosTotales .cursosPorcentaje {
+    width: 10vw;
+}
+
+.curricula .email {
+    width: 20vw;
 }
 
 .textoGenerado {
     display: grid;
-    align-items: center;
     font-size: var(--fontSize-texto-generado);
     font-family: var(--tipografia1);
     margin-bottom: 0.3vw;

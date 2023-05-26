@@ -119,8 +119,10 @@ $reporteAdvanced.onclick = function () {
 }
 
 function borrarLista() {
-  const $itemsGenerados = document.querySelectorAll(".textoGenerado");
-  $itemsGenerados.forEach(elem => elem.remove());
+  const $textosGenerados = document.querySelectorAll(".textoGenerado");
+  const $panelesTextosGenerados = document.querySelectorAll(".panelTextoGenerado");
+  $textosGenerados.forEach(elem => elem.remove());
+  $panelesTextosGenerados.forEach(elem => elem.remove());
 }
 
 function borrarResultados() {
