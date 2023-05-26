@@ -1,4 +1,4 @@
-const $lista = document.getElementById("lista");
+const $contenedorTextoGenerado = document.getElementById("contenedor-textoGenerado");
 const $totalInscriptos = document.getElementById("totalInscriptos");
 const $alMenosUno = document.getElementById("alMenosUnCurso");
 const $ningunCurso = document.getElementById("ningunCurso");

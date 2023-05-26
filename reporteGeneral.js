@@ -45,13 +45,13 @@ function generarReporteGeneral(sortedData) {
       $completed2.innerText = Math.round((element["Completed Courses"] / element["Courses in Curriculum"])*100) + "%"
 
       // Agregar los elementos generados al elemento padre (que tiene class = $list)
-      $lista.appendChild($firstName);
-      $lista.appendChild($lastName);
-      $lista.appendChild($email);
-      $lista.appendChild($curriculum);
-      $lista.appendChild($completed1);
-      $lista.appendChild($coursesInCurriculum);
-      $lista.appendChild($completed2);
+      $contenedorTextoGenerado.appendChild($firstName);
+      $contenedorTextoGenerado.appendChild($lastName);
+      $contenedorTextoGenerado.appendChild($email);
+      $contenedorTextoGenerado.appendChild($curriculum);
+      $contenedorTextoGenerado.appendChild($completed1);
+      $contenedorTextoGenerado.appendChild($coursesInCurriculum);
+      $contenedorTextoGenerado.appendChild($completed2);
 
       contador++
 
