@@ -44,7 +44,7 @@ function generarReporteGeneral(sortedData) {
       $coursesInCurriculum.innerText = element["Courses in Curriculum"];
       $completed2.innerText = Math.round((element["Completed Courses"] / element["Courses in Curriculum"])*100) + "%"
 
-      // Agregar los elementos generados al elemento padre (que tiene class = $list)
+      // Agregar los elementos generados al elemento padre (que tiene id = contenedor-textoGenerado)
       $contenedorTextoGenerado.appendChild($firstName);
       $contenedorTextoGenerado.appendChild($lastName);
       $contenedorTextoGenerado.appendChild($email);

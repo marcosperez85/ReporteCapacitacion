@@ -1,4 +1,7 @@
 // Crear un elemento HTML por cada elemento del array de JSON
+// Este código se repite con respecto al del Reporte General sólo que en este caso no hace falta eliminar
+// la primera y tercera fila.
+
 function crearFilas(jsonFiltrado) {
     jsonFiltrado.forEach(element => {
         const $firstName = document.createElement("div");
