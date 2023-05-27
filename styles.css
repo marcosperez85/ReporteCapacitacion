@@ -4,6 +4,8 @@
     --ancho-dos: 20vw;
     --altura-uno: 1.5vw;
     --altura-dos: 4.5vw;
+    --borde-panel: 1px solid black;
+    --borde-blanco: 1px solid white;
     --ancho-de-columnas: repeat(2, 10vw) 20vw 20vw repeat(3, 10vw);
     --tipografia1: sans-serif;
     --fontSize-texto-generado: 1.2vw;
@@ -80,8 +82,13 @@ h1 {
     grid-template-columns: var(--ancho-de-columnas);
 }
 
-.panelTextoGenerado {
-    border: 1px solid black;
+.panelConBorde {
+    border: var(--borde-panel);
+}
+
+.bordeSupInfBlanco {
+    border-top: var(--borde-blanco);
+    border-bottom: var(--borde-blanco);
 }
 
 .alturaBaja {

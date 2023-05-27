@@ -27,13 +27,13 @@ function crearFilas(jsonFiltrado, tipoDeReporte) {
         const $completed2 = document.createElement("div");
 
         // Asigno la clase a los contenedores de texto
-        $panelFirstName.className = "panelTextoGenerado anchoCorto alturaBaja";
-        $panelLastName.className = "panelTextoGenerado anchoCorto alturaBaja";
-        $panelEmail.className = "panelTextoGenerado anchoLargo alturaBaja";
-        $panelCurriculum.className = "panelTextoGenerado anchoLargo alturaBaja";
-        $panelCompleted1.className = "panelTextoGenerado anchoCorto alturaBaja";
-        $panelCoursesInCurriculum.className = "panelTextoGenerado anchoCorto alturaBaja";
-        $panelCompleted2.className = "panelTextoGenerado anchoCorto alturaBaja";
+        $panelFirstName.className = "panelConBorde anchoCorto alturaBaja";
+        $panelLastName.className = "panelConBorde anchoCorto alturaBaja";
+        $panelEmail.className = "panelConBorde anchoLargo alturaBaja";
+        $panelCurriculum.className = "panelConBorde anchoLargo alturaBaja";
+        $panelCompleted1.className = "panelConBorde anchoCorto alturaBaja";
+        $panelCoursesInCurriculum.className = "panelConBorde anchoCorto alturaBaja";
+        $panelCompleted2.className = "panelConBorde anchoCorto alturaBaja";
 
         // Asigno la clase a los textos
         $firstName.className = "textoGenerado";
@@ -48,25 +48,9 @@ function crearFilas(jsonFiltrado, tipoDeReporte) {
         const regex1 = /YPF |iFIX & Historian|[(]|[)]/g;
         const nuevoCurriculum = element["Curriculum/Series Title"].replace(regex1, "");
 
-        // Filtro nombre, apellido e email en HTML y NO en el JSON
-        if (tipoDeReporte == "ReporteGeneral") {
-
-            if (contador == 1 || contador == 2) {
-                $firstName.innerText = " ";
-                $lastName.innerText = " ";
-                $email.innerText = " ";
-            } else {
-                $firstName.innerText = element["First Name"];
-                $lastName.innerText = element["Last name"];
-                $email.innerText = element["Email"];
-            }
-            
-        } else {
-            $firstName.innerText = element["First Name"];
-            $lastName.innerText = element["Last name"];
-            $email.innerText = element["Email"];
-        }
-
+        $firstName.innerText = element["First Name"];
+        $lastName.innerText = element["Last name"];
+        $email.innerText = element["Email"];
         $curriculum.innerText = nuevoCurriculum;
         $completed1.innerText = element["Completed Courses"];
         $coursesInCurriculum.innerText = element["Courses in Curriculum"];
@@ -89,6 +73,26 @@ function crearFilas(jsonFiltrado, tipoDeReporte) {
         $panelCompleted1.appendChild($completed1)
         $panelCoursesInCurriculum.appendChild($coursesInCurriculum)
         $panelCompleted2.appendChild($completed2)
+
+        // Filtro nombre, apellido e email en HTML y NO en el JSON
+        if (tipoDeReporte == "ReporteGeneral") {
+            if (contador == 0 || contador == 2) {
+
+                $firstName.innerText = " ";
+                $lastName.innerText = " ";
+                $email.innerText = " ";
+            }
+
+            if (contador == 1) {
+                $firstName.innerText = element["First Name"];
+                $lastName.innerText = element["Last name"];
+                $email.innerText = element["Email"];
+
+                $panelFirstName.classList.add("bordeSupInfBlanco");
+                $panelLastName.classList.add("bordeSupInfBlanco");
+                $panelEmail.classList.add("bordeSupInfBlanco");
+            }
+        }
 
         contador++
     });

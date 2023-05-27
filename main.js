@@ -48,9 +48,9 @@ fileInput.addEventListener('change', (event) => {
     borrarCanvasAnterior();
     ocultarCanvasContainer();
     mostrarBotones();
-    generarReporteGeneral(sortedData);   
+    generarReporteGeneral(sortedData);
   })
-  
+
   // Set the file type to 'text' or 'dataURL' depending on your needs
   reader.readAsText(file);
 });
@@ -62,7 +62,7 @@ function filterNonYpfPeople() {
     elem["Email"] != "marcos.perez@ilagroup.com" &&
     elem["Email"] != "ml.shiroma@tecnet-ibermatica.com.ar" &&
     elem["Email"] != "TEST@ypftest.comx")
-  }
+}
 
 function ordenarAlfabeticamente() {
   // Ordenar alfabeticamente
@@ -77,7 +77,7 @@ function ordenarAlfabeticamente() {
   })
 }
 
-let replaceWithZero = function() {
+let replaceWithZero = function () {
   // Agregar un cero a los campos vacíos de "Cursos Completados"
   // No lo hago en el forEach para no recargar cada función y que sea legible a futuro
   sortedData.map(elem => elem["Completed Courses"] == "" ? elem["Completed Courses"] = 0 : elem)
@@ -130,9 +130,11 @@ function mostrarBotones() {
 
 function borrarLista() {
   const $textosGenerados = document.querySelectorAll(".textoGenerado");
-  const $panelesTextosGenerados = document.querySelectorAll(".panelTextoGenerado");
+  const $panelesTextosGenerados1 = document.querySelectorAll(".panelConBorde");
+  const $panelesTextosGenerados2 = document.querySelectorAll(".bordeSupInfBlanco");
   $textosGenerados.forEach(elem => elem.remove());
-  $panelesTextosGenerados.forEach(elem => elem.remove());
+  $panelesTextosGenerados1.forEach(elem => elem.remove());
+  $panelesTextosGenerados2.forEach(elem => elem.remove());
 }
 
 function borrarResultados() {
@@ -143,7 +145,7 @@ function borrarResultados() {
 function borrarCanvasAnterior() {
   const $canvas = document.getElementById("graficoContainer")
   const $canvas2 = document.getElementById("pieChartContainer")
-  if($canvas || $canvas2) {
+  if ($canvas || $canvas2) {
     d3.select("svg").remove();
   }
 }
@@ -173,28 +175,33 @@ function cambiarTituloAdvanced() {
   document.querySelector("h1").textContent = "Avance de Capacitacion Advanced"
 }
 
-function generarReporteFoundational(sortedData) {
-  const tier1Filter = sortedData.filter(elem => elem["Curriculum/Series Title"] == "YPF Tier 1 - iFIX & Historian (Foundational)")
-                                  .filter(elem => elem["Completed Courses"] > 0);
-  crearFilas(tier1Filter, tipoDeReporte)
-  crearGraficoDeBarras(tier1Filter);
-}
-
 function generarReporteGeneral(sortedData) {
   crearFilas(sortedData, tipoDeReporte);
   generarEstadisticasGenerales(sortedData);
 }
 
+function generarReporteFoundational(sortedData) {
+  const tier1Filter = sortedData.filter(elem => elem["Curriculum/Series Title"] == "YPF Tier 1 - iFIX & Historian (Foundational)")
+    .filter(elem => elem["Completed Courses"] > 0);
+
+  crearFilas(tier1Filter, tipoDeReporte)
+  crearGraficoDeBarras(tier1Filter);
+}
+
+
+
 function generarReporteIntermediate(sortedData) {
   const tier2Filter = sortedData.filter(elem => elem["Curriculum/Series Title"] == "YPF Tier 2 - iFIX & Historian (Intermediate)")
-                                .filter(elem => elem["Completed Courses"] > 0);
+    .filter(elem => elem["Completed Courses"] > 0);
+ 
   crearFilas(tier2Filter, tipoDeReporte)
   crearGraficoDeBarras(tier2Filter);
 }
 
 function generarReporteAdvanced(sortedData) {
   const tier3Filter = sortedData.filter(elem => elem["Curriculum/Series Title"] == "YPF Tier 3 - iFIX & Historian (Advanced)")
-                                .filter(elem => elem["Completed Courses"] > 0);
+    .filter(elem => elem["Completed Courses"] > 0);
+ 
   crearFilas(tier3Filter, tipoDeReporte)
   crearGraficoDeBarras(tier3Filter);
 }
