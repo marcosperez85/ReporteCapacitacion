@@ -2,9 +2,9 @@ const $contenedorTextoGenerado = document.getElementById("contenedor-textoGenera
 const $totalInscriptos = document.getElementById("totalInscriptos");
 const $alMenosUno = document.getElementById("alMenosUnCurso");
 const $ningunCurso = document.getElementById("ningunCurso");
-const $resultadosContainer = document.getElementById("resultadosContainer");
+const $tablaDeResultados = document.getElementById("tablaDeResultados");
 
-const $tablaResultados = document.getElementById("tablaResultados")
+const $contenedorResultados = document.getElementById("contenedorResultados")
 const $graficoContainer = document.getElementById("graficoContainer");
 const $pieChartContainer = document.getElementById("pieChartContainer")
 
@@ -138,7 +138,8 @@ function borrarLista() {
 }
 
 function borrarResultados() {
-  $resultadosContainer.className = "oculto";
+  $contenedorResultados.className = "oculto";
+  $tablaDeResultados.className = "oculto";
   arrayNombresConCursos = [];
 }
 

@@ -9,7 +9,8 @@ function generarEstadisticasGenerales(sortedData) {
 }
 
 function mostrarResultados() {
-    $resultadosContainer.className = "resultadosContainer";
+    $contenedorResultados.className = "contenedorResultados";
+    $tablaDeResultados.className = "tablaDeResultados";
 }
 
 function calcularTotalInscriptos() {

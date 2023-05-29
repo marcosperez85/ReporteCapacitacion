@@ -10,6 +10,8 @@
     --tipografia1: sans-serif;
     --fontSize-texto-generado: 1.2vw;
     --fontSize-nombreColumnas: 1.1vw;
+    --ancho-tabla-resultados: 35vw;
+    --alto-fila-resultados: 15vw;
 }
 
 body {
@@ -117,16 +119,17 @@ h1 {
 
 .oculto {
     visibility: hidden;
+    display: none;
 }
 
-.resultadosContainer {
+#tablaDeResultados {
     display: grid;
     position: relative;
     grid-template-columns: 50% 50%;
     grid-template-rows: repeat(3, 5vw);
     background-color: #ccf;
-    width: 25vw;
-    height: 15vw;
+    width: var(--ancho-tabla-resultados);
+    height: var(--alto-fila-resultados);
 }
 
 .alinearVertical {
@@ -173,16 +176,17 @@ h1 {
 .graficoContainer {
     width: 90%;
     margin-left: 5vw;
+    margin-top: 3vw;
 }
 
-#tablaResultados {
+.contenedorResultados {
     display:flex;
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
     gap: 5vw;
     width: 60vw;
-    margin-left: 10vw; 
+    margin-left: 20vw; 
     margin-top: 3vw;
 }
 
