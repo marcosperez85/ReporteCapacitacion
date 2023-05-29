@@ -20,20 +20,12 @@ let sortedData
 let arrayNombresConCursos;
 let tipoDeReporte = "ReporteGeneral";
 
-// Get a reference to the file input element
-const fileInput = document.getElementById('file-input');
-
-// Add an event listener to the file input element to handle file selection
-fileInput.addEventListener('change', (event) => {
-  // Get the selected file from the file input element
-  const file = event.target.files[0];
-
-  // Use the FileReader API to read the file contents
-  const reader = new FileReader();
-
-  reader.addEventListener('load', (event) => {
-    // Parse the JSON data from the file contents
-    jsonData = JSON.parse(event.target.result);
+fetch('reporte.json')
+  .then(response => response.json())
+  .then(data => {
+    
+    // Asigno (copio) el JSON a un array para poder manipularlo como hacía antes con el input del usuario
+    jsonData = [...data];
 
     // Quito el último elemento porque desde GE viene con los valores en blanco
     jsonData.pop();
@@ -49,12 +41,8 @@ fileInput.addEventListener('change', (event) => {
     ocultarCanvasContainer();
     mostrarBotones();
     generarReporteGeneral(sortedData);
+
   })
-
-  // Set the file type to 'text' or 'dataURL' depending on your needs
-  reader.readAsText(file);
-});
-
 
 function filterNonYpfPeople() {
   // Quitar los elementos que no pertenezcan a YPF
@@ -192,7 +180,7 @@ function generarReporteFoundational(sortedData) {
 function generarReporteIntermediate(sortedData) {
   const tier2Filter = sortedData.filter(elem => elem["Curriculum/Series Title"] == "YPF Tier 2 - iFIX & Historian (Intermediate)")
     .filter(elem => elem["Completed Courses"] > 0);
- 
+
   crearFilas(tier2Filter, tipoDeReporte)
   crearGraficoDeBarras(tier2Filter);
 }
@@ -200,7 +188,7 @@ function generarReporteIntermediate(sortedData) {
 function generarReporteAdvanced(sortedData) {
   const tier3Filter = sortedData.filter(elem => elem["Curriculum/Series Title"] == "YPF Tier 3 - iFIX & Historian (Advanced)")
     .filter(elem => elem["Completed Courses"] > 0);
- 
+
   crearFilas(tier3Filter, tipoDeReporte)
   crearGraficoDeBarras(tier3Filter);
 }
