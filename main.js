@@ -188,8 +188,6 @@ function generarReporteFoundational(sortedData) {
   crearGraficoDeBarras(tier1Filter);
 }
 
-
-
 function generarReporteIntermediate(sortedData) {
   const tier2Filter = sortedData.filter(elem => elem["Curriculum/Series Title"] == "YPF Tier 2 - iFIX & Historian (Intermediate)")
     .filter(elem => elem["Completed Courses"] > 0);
