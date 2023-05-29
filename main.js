@@ -17,7 +17,7 @@ const $reporteAdvanced = document.getElementById("reporteAdvanced");
 let jsonData
 let filteredData
 let sortedData
-let arrayNombresConCursos = [];
+let arrayNombresConCursos;
 let tipoDeReporte = "ReporteGeneral";
 
 // Get a reference to the file input element

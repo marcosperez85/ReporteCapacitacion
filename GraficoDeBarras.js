@@ -45,8 +45,8 @@ function crearGraficoDeBarras(jsonFiltrado) {
 		.attr("class", "bar");
 
 	// Configurar ejes
-	var xAxis = d3.axisBottom(xScale);
-	var yAxis = d3.axisLeft(yScale).ticks(maxY)
+	let xAxis = d3.axisBottom(xScale);
+	let yAxis = d3.axisLeft(yScale).ticks(maxY)
 
 	svg.append('g')            
 		.attr("transform", "translate(0," + (alto-marginBottom) + ")")

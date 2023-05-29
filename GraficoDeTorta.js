@@ -4,12 +4,12 @@ function crearGraficoDeTorta(arrayResultados) {
     let data = arrayResultados;
 
     // Set the dimensions and radius of the pie chart
-    var width = 300;
-    var height = 300;
-    var radius = Math.min(width, height) / 2;
+    let width = 300;
+    let height = 300;
+    let radius = Math.min(width, height) / 2;
 
     // Set the color scale
-    var color = d3.scaleOrdinal()
+    let color = d3.scaleOrdinal()
         .range(["#98abc5", "#8a89a6"]);
 
     // Create the SVG element
@@ -21,17 +21,17 @@ function crearGraficoDeTorta(arrayResultados) {
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
     // Create the arc
-    var arc = d3.arc()
+    let arc = d3.arc()
         .outerRadius(radius - 10)
         .innerRadius(0);
 
     // Create the pie layout
-    var pie = d3.pie()
+    let pie = d3.pie()
         .sort(null)
         .value(function(d) { return d; });
 
     // Add the slices to the pie
-    var g = svg.selectAll(".arc")
+    let g = svg.selectAll(".arc")
         .data(pie(data))
         .enter().append("g")
         .attr("class", "arc");
@@ -46,6 +46,4 @@ function crearGraficoDeTorta(arrayResultados) {
         .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
         .attr("dy", ".35em")
         .text(function(d) { return d.data; });
-
-
 }

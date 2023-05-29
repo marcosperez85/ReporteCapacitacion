@@ -3,7 +3,7 @@ function generarEstadisticasGenerales(sortedData) {
     mostrarResultados();
     calcularTotalInscriptos();
     crearArrayConPersonas();
-    arrayResultados = calcularEstadisticas();
+    let arrayResultados = calcularEstadisticas();
     crearGraficoDeTorta(arrayResultados)
     mostrarGraficoDeTorta();
 }
@@ -19,7 +19,7 @@ function calcularTotalInscriptos() {
 function crearArrayConPersonas() {
     let arrayProv = [];
 
-    for (let i = 0; i < sortedData.length; i++) {
+    for(let i = 0; i < sortedData.length; i++) {
         if (arrayProv.length == 4) {
             arrayProv = [];
         }
