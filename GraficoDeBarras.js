@@ -18,20 +18,23 @@ function crearGraficoDeBarras(jsonFiltrado) {
 	const maxY = Math.max(...cantCompletada)
 
 	const xScale = d3.scaleBand()
-					.domain(personaCurso.map((data) => data[0]))
-					.range([marginLeft, ancho - marginRight])
-					.paddingInner(0.03);
+		.domain(personaCurso.map((data) => data[0]))
+		.range([marginLeft, ancho - marginRight])
+		.paddingInner(0.03);
 
 	const yScale = d3.scaleLinear()
-					.domain([0, maxY])
-					.range([alto - marginBottom, marginTop]);
-					
+		.domain([0, maxY])
+		.range([alto - marginBottom, marginTop]);
+
 
 	const svg = d3.select("#graficoContainer")
 		.append("svg")
+		.classed("graficoContainer", true) //container class to make it responsive
 		.attr("width", ancho)
 		.attr("height", alto)
 		.attr("id", "canvas")
+		.attr("preserveAspectRatio", "xMinYMin meet")
+		.attr("viewBox", "0 0 1000 500")
 
 	svg.selectAll("rect")
 		.data(personaCurso)
@@ -48,17 +51,17 @@ function crearGraficoDeBarras(jsonFiltrado) {
 	let xAxis = d3.axisBottom(xScale);
 	let yAxis = d3.axisLeft(yScale).ticks(maxY)
 
-	svg.append('g')            
-		.attr("transform", "translate(0," + (alto-marginBottom) + ")")
+	svg.append('g')
+		.attr("transform", "translate(0," + (alto - marginBottom) + ")")
 		.call(xAxis)
-		.selectAll("text")  
+		.selectAll("text")
 		.attr("class", "xAxis")
-    	.style("text-anchor", "end")
-    	.attr("dx", "-.8em")
-    	.attr("dy", ".15em")
-    	.attr("transform", "rotate(-30)");
-	
-	svg.append('g')            
+		.style("text-anchor", "end")
+		.attr("dx", "-.8em")
+		.attr("dy", ".15em")
+		.attr("transform", "rotate(-30)");
+
+	svg.append('g')
 		.attr("transform", "translate(" + marginLeft + ",0 )")
 		.call(yAxis)
 		.selectAll("text")
