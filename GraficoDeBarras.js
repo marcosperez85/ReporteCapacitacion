@@ -30,11 +30,12 @@ function crearGraficoDeBarras(jsonFiltrado) {
 	const svg = d3.select("#graficoContainer")
 		.append("svg")
 		.classed("graficoContainer", true) //container class to make it responsive
-		.attr("width", ancho)
-		.attr("height", alto)
+		// .attr("width", ancho)
+		// .attr("height", alto)
 		.attr("id", "canvas")
 		.attr("preserveAspectRatio", "xMinYMin meet")
-		.attr("viewBox", "0 0 1000 500")
+		.attr("viewBox", "0 0 1000 500");
+		
 
 	svg.selectAll("rect")
 		.data(personaCurso)

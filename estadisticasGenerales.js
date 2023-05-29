@@ -58,5 +58,5 @@ function calcularEstadisticas() {
 }
 
 function mostrarGraficoDeTorta() {
-    $pieChartContainer.className = "";
+    $pieChartContainer.className = "pieChartContainer";
 }

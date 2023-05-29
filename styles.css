@@ -123,13 +123,10 @@ h1 {
     display: grid;
     position: relative;
     grid-template-columns: 50% 50%;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 5vw);
     background-color: #ccf;
     width: 25vw;
-    height: 12vw;
-    left: 4vw;
-    margin-top: 4vw;
-    margin-bottom: 4vw;
+    height: 15vw;
 }
 
 .alinearVertical {
@@ -163,7 +160,7 @@ h1 {
     font-size: 1.3vw;
     height: 4vw;
     width: 12vw;
-    border-top-right-radius: 1vw;
+    border-top-right-radius: 1vw;   
     border-top-left-radius: 1vw;
     border-bottom-right-radius: 1vw;
     border-bottom-left-radius: 1vw;
@@ -179,17 +176,20 @@ h1 {
 }
 
 #tablaResultados {
-    position: relative;
     display:flex;
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
-    width: 55vw;
+    gap: 5vw;
+    width: 60vw;
+    margin-left: 10vw; 
+    margin-top: 3vw;
 }
 
-#pieChartContainer {
-    margin-top: 3vw;
-    margin-bottom: 3vw;
+.pieChartContainer {
+    /* margin-top: 3vw;
+    margin-bottom: 3vw; */
+    width: 70%;
 }
 
 .bar:hover {

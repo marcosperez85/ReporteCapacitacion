@@ -15,10 +15,13 @@ function crearGraficoDeTorta(arrayResultados) {
     // Create the SVG element
     const svg = d3.select("#pieChartContainer")
         .append("svg")
-        .attr("width", width)
-        .attr("height", height)
+        .classed("pieChartContainer", true) //container class to make it responsive
+        .attr("preserveAspectRatio", "xMinYMin meet")
+		.attr("viewBox", "0 0 300 300")
+        .attr("width", '100%') // Agregando el porcentaje se vuelve responsive
+        .attr("height", '100%') // Agregando el porcentaje se vuelve responsive
         .append("g")
-        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
 
     // Create the arc
     let arc = d3.arc()
