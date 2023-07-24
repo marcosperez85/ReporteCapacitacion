@@ -25,7 +25,7 @@ let mesActual = objetoDate.getMonth();
 let anioActual = objetoDate.getFullYear();
 
 
-fetch('reporte.json')
+fetch('reporteGenerico.json')
   .then(response => response.json())
   .then(data => {
     
